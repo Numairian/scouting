@@ -1,0 +1,17 @@
+; "Initilization command", /start 
+
+alis start {
+  dialog -m start start 
+}
+
+; the dialog the initilization command prompts
+
+dialog start {
+  Title "Robot eHarmony 2015"
+  size 20 20 100 100
+  option dbu
+  
+  text "Welcome to scouting in 2015! Which lovely robot will you choose?" 1, 20 40 60  5
+  button "Enter" 2, 40 75 20 10, ok
+  
+}
