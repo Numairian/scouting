@@ -1,6 +1,6 @@
 ; "Initilization command", /start 
 
-alis start {
+alias start {
   dialog -m start start 
 }
 
