@@ -1,0 +1,1538 @@
+alias start {
+  ingamesheets
+  ingame1
+  windows
+  hmake Teams
+}
+
+alias windows {
+  window -e3l15 @TOPGUNS 200 40 600 400
+  window -e3l15 @TOSSES 220 60 600 400
+  window -e3l15 @NABS 240 80 600 400
+  window -e3l15 @HANDOFFS 260 100 600 400
+  window -e3l15 @SMALLSHOTS 280 120 600 400
+  window -e3l15 @SHEPHERDS 300 140 600 400
+  window -e3l15 @NULLS 320 160 600 400
+  window -e3l15 @SWATS 340 180 600 400
+  window -e3l15 @PICS 200 200 600 400
+}
+
+alias go {
+  run notepad.exe team.ini
+}
+
+alias z1 {
+  run notepad.exe ZoneOne.ini
+}
+
+alias z2 {
+  run notepad.exe ZoneTwo.ini
+}
+
+alias z3 {
+  run notepad.exe ZoneThree.ini
+}
+
+alias zz {
+  run notepad.exe ZoneOne.ini
+  run notepad.exe ZoneTwo.ini
+  run notepad.exe ZoneThree.ini
+}
+
+alias ro {
+  echo -a $readini(team.ini, np, @ $+ $1, $active)
+}
+
+alias havei {
+  echo -a $hget(Teams, $1)
+}
+
+alias scoutre {
+  hfree Teams
+  timer 1.1 1 hmake Teams
+}
+
+alias kill {
+  unsetall
+  echo -a variables cleared
+}
+
+alias ingamesheets {
+  dialog -m ingamesheets ingamesheets
+}
+dialog ingamesheets {
+  title INFORMATION
+  size 597 10 83 26
+  option dbu
+
+  button "1", 1, 10 7 12 12
+  button "2", 2, 35 7 12 12 
+  button "3", 3, 60 7 12 12 
+}
+
+on *:dialog:ingamesheets:sclick:1:{
+  ingame1
+}
+on *:dialog:ingamesheets:sclick:2:{
+  ingame2 
+}
+on *:dialog:ingamesheets:sclick:3:{
+  image
+}
+
+; IMAGE
+alias image {
+  dialog -m image image
+}
+; dialog structure
+dialog image {
+  title "3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 "
+  size -1 -1 200 200
+  option dbu
+
+  icon 1, 1 1 200 200, "C:\Users\sarah\Documents\scouting.png
+  button "Done", 7, 150 180 40 12, ok
+}
+
+alias kill1 {
+  if (%TeamNum1 != $null) {
+    unset %TeamNum1
+  } 
+
+  if (%TGRate1 != $null) {
+    unset %TGRate1
+  } 
+
+  if (%TGExp1 != $null) {
+    unset %TGExp1
+  } 
+
+  if (%TGOutput1 != $null) {
+    unset %TGOutput1
+  } 
+
+  if (%TGStored1 != $null) {
+    unset %TGStored1
+  } 
+
+  if (%TOSSRate1 != $null) {
+    unset %TOSSRate1
+  } 
+
+  if (%TOSSExp1 != $null) {
+    unset %TOSSExp1
+  } 
+
+  if (%TOSSOutput1 != $null) {
+    unset %TOSSOutput1
+  } 
+
+  if (%TOSSStored1 != $null) {
+    unset %TOSSStored1
+  } 
+
+  if (%NABRate1 != $null) {
+    unset %NABRate1
+  } 
+
+  if (%NABExp1 != $null) {
+    unset %NABExp1
+  } 
+
+  if (%NABOutput1 != $null) {
+    unset %NABOutput1
+  } 
+
+  if (%NABStored1 != $null) {
+    unset %NABStored1
+  } 
+
+  if (%HORate1 != $null) {
+    unset %HORate1
+  } 
+
+  if (%HOExp1 != $null) {
+    unset %HOExp1
+  } 
+
+  if (%HOOutput1 != $null) {
+    unset %HOOutput1
+  } 
+
+  if (%HOStored1 != $null) {
+    unset %HOStored1
+  } 
+
+  if (%SMSRate1 != $null) {
+    unset %SMSRate1
+  } 
+
+  if (%SMSExp1 != $null) {
+    unset %SMSExp1
+  } 
+
+  if (%SMSOutput1 != $null) {
+    unset %SMSOutput1
+  } 
+
+  if (%SMSStored1 != $null) {
+    unset %SMSStored1
+  } 
+
+  if (%SHEPRate1 != $null) {
+    unset %SHEPRate1
+  } 
+
+  if (%SHEPExp1 != $null) {
+    unset %SHEPExp1
+  } 
+
+  if (%SHEPOutput1 != $null) {
+    unset %SHEPOutput1
+  } 
+
+  if (%SHEPStored1 != $null) {
+    unset %SHEPStored1
+  } 
+
+  if (%NULLRate1 != $null) {
+    unset %NULLRate1
+  } 
+
+  if (%NULLExp1 != $null) {
+    unset %NULLExp1
+  } 
+
+  if (%NULLOutput1 != $null) {
+    unset %NULLOutput1
+  } 
+
+  if (%NULLStored1 != $null) {
+    unset %NULLStored1
+  } 
+
+  if (%SWATRate1 != $null) {
+    unset %SWATRate1
+  } 
+
+  if (%SWATExp1 != $null) {
+    unset %SWATExp1
+  } 
+
+  if (%SWATOutput1 != $null) {
+    unset %SWATOutput1
+  } 
+
+  if (%SWATStored1 != $null) {
+    unset %SWATStored1
+  } 
+
+  if (%PICRate1 != $null) {
+    unset %PICRate1
+  } 
+
+  if (%PICExp1 != $null) {
+    unset %PICExp1
+  } 
+
+  if (%PICOutput1 != $null) {
+    unset %PICOutput1
+  }
+
+  if (%PICStored1 != $null) {
+    unset %PICStored1
+  }
+
+  if (%AutonStored1 != $null) {
+    unset %AutonStored1
+  } 
+
+  if (%aMCZ1 != $null) {
+    unset %aMCZ1
+  } 
+
+  if (%aHOTG1 != $null) {
+    unset %aHOTG1
+  } 
+
+  if (%aTGS1 != $null) {
+    unset %aTGS1
+  } 
+
+  if (%aLGS1 != $null) {
+    unset %aLGS1
+  }
+
+  if (%aSN1.1 != $null) {
+    unset %aSN1.1
+  }
+
+  if (%aSN1.2 != $null) {
+    unset %aSN1.2
+  }
+
+  if (%aSN1.3 != $null) {
+    unset %aSN1.3
+  }
+}
+
+alias kill2 {
+  if (%TeamNum2 != $null) {
+    unset %TeamNum2
+  } 
+
+  if (%TGRate2 != $null) {
+    unset %TGRate2
+  } 
+
+  if (%TGExp2 != $null) {
+    unset %TGExp2
+  } 
+
+  if (%TGOutput2 != $null) {
+    unset %TGOutput2
+  } 
+
+  if (%TGStored2 != $null) {
+    unset %TGStored2
+  } 
+
+  if (%TOSSRate2 != $null) {
+    unset %TOSSRate2
+  } 
+
+  if (%TOSSExp2 != $null) {
+    unset %TOSSExp2
+  } 
+
+  if (%TOSSOutput2 != $null) {
+    unset %TOSSOutput2
+  } 
+
+  if (%TOSSStored2 != $null) {
+    unset %TOSSStored2
+  } 
+
+  if (%NABRate2 != $null) {
+    unset %NABRate2
+  } 
+
+  if (%NABExp2 != $null) {
+    unset %NABExp2
+  } 
+
+  if (%NABOutput2 != $null) {
+    unset %NABOutput2
+  } 
+
+  if (%NABStored2 != $null) {
+    unset %NABStored2
+  } 
+
+  if (%HORate2 != $null) {
+    unset %HORate2
+  } 
+
+  if (%HOExp2 != $null) {
+    unset %HOExp2
+  } 
+
+  if (%HOOutput2 != $null) {
+    unset %HOOutput2
+  } 
+
+  if (%HOStored2 != $null) {
+    unset %HOStored2
+  } 
+
+  if (%SMSRate2 != $null) {
+    unset %SMSRate2
+  } 
+
+  if (%SMSExp2 != $null) {
+    unset %SMSExp2
+  } 
+
+  if (%SMSOutput2 != $null) {
+    unset %SMSOutput2
+  } 
+
+  if (%SMSStored2 != $null) {
+    unset %SMSStored2
+  } 
+
+  if (%SHEPRate2 != $null) {
+    unset %SHEPRate2
+  } 
+
+  if (%SHEPExp2 != $null) {
+    unset %SHEPExp2
+  } 
+
+  if (%SHEPOutput2 != $null) {
+    unset %SHEPOutput2
+  } 
+
+  if (%SHEPStored2 != $null) {
+    unset %SHEPStored2
+  } 
+
+  if (%NULLRate2 != $null) {
+    unset %NULLRate2
+  } 
+
+  if (%NULLExp2 != $null) {
+    unset %NULLExp2
+  } 
+
+  if (%NULLOutput2 != $null) {
+    unset %NULLOutput2
+  } 
+
+  if (%NULLStored2 != $null) {
+    unset %NULLStored2
+  } 
+
+  if (%SWATRate2 != $null) {
+    unset %SWATRate2
+  } 
+
+  if (%SWATExp2 != $null) {
+    unset %SWATExp2
+  } 
+
+  if (%SWATOutput2 != $null) {
+    unset %SWATOutput2
+  } 
+
+  if (%SWATStored2 != $null) {
+    unset %SWATStored2
+  } 
+
+  if (%PICRate2 != $null) {
+    unset %PICRate2
+  } 
+
+  if (%PICExp2 != $null) {
+    unset %PICExp2
+  } 
+
+  if (%PICOutput2 != $null) {
+    unset %PICOutput2
+  }
+
+  if (%PICStored2 != $null) {
+    unset %PICStored2
+  }
+
+  if (%AutonStored2 != $null) {
+    unset %AutonStored2
+  } 
+
+  if (%aMCZ2 != $null) {
+    unset %aMCZ2
+  } 
+
+  if (%aHOTG2 != $null) {
+    unset %aHOTG2
+  } 
+
+  if (%aTGS2 != $null) {
+    unset %aTGS2
+  } 
+
+  if (%aLGS2 != $null) {
+    unset %aLGS2
+  }
+
+  if (%aSN2.1 != $null) {
+    unset %aSN2.1
+  }
+
+  if (%aSN2.2 != $null) {
+    unset %aSN2.2
+  }
+
+  if (%aSN2.3 != $null) {
+    unset %aSN2.3
+  }
+}
+
+alias ingame1 {
+  kill1
+  dialog -m ingame1 ingame1
+}
+dialog ingame1 {
+  title IN MATCH SCORING 
+  size 30 45 290 310
+  option dbu
+
+  edit "", 1, 15 10 50 10
+
+  text "Autonomous", 2, 110 75 75 10
+
+  text "Teleop", 3, 120 107 25 50
+
+  text "TopGun", 4, 10 125 50 25
+  combo 5, 32 123 20 10, drop
+  combo 6, 10 140 85 10, drop
+
+  text "Toss", 7, 100 125 50 25
+  combo 8, 120 123 20 10, drop
+  combo 9, 100 140 85 10, drop 
+
+  text "Nab", 10, 190 125 50 25
+  combo 11, 210 123 20 10, drop
+  combo 12, 190 140 85 10, drop
+
+  text "HandOff", 13, 10 200 50 25
+  combo 14, 35 198 20 10, drop
+  combo 15, 10 215 85 10, drop
+
+  text "SmallShot", 16, 97 200 50 25
+  combo 17, 125 198 20 10, drop
+  combo 18, 100 215 85 10, drop
+
+  text "Shepherd", 19, 187 200 50 25
+  combo 20, 215 198 20 10, drop
+  combo 21, 190 215 85 10, drop
+
+  text "Null", 22, 10 270 50 25
+  combo 23, 28 268 20 10, drop
+  combo 24, 10 285 85 10, drop
+
+  text "Swat", 25, 100 270 50 25
+  combo 26, 122 268 20 10, drop
+  combo 27, 100 285 85 10, drop
+
+  text "Pic", 28, 190 270 50 25
+  combo 29, 208 268 20 10, drop
+  combo 30, 190 285 85 10, drop
+
+  button "Submit", 31, 210 10 50 15, ok
+
+  check "Moves into Colored Zone", 32, 20 86 80 12
+  check "Top Goal Shooter", 33, 105 86 60 12 
+  check "Low Goal Shooter", 34, 190 86 60 12
+
+  edit "", 35, 15 34 250 10, multi
+  edit "", 36, 15 47 250 10, multi
+  edit "", 37, 15 60 250 10, multi
+  text "Preformance Notes", 38, 110 23 50 8
+
+  text "In-Game Scoring Sheet One", 39, 100 12 70 10
+
+  text "1", 40, 10 34 3 10 
+  text "2", 41, 10 47 3 10 
+  text "3", 42, 10 60 3 10 
+}
+on *:dialog:ingame1:sclick:5:{
+  set %TGRate1 $did(ingame1,5,$did(ingame1,5).sel).text 
+}
+
+on *:dialog:ingame1:sclick:6:{
+  set %TGExp1 $did(ingame1,6,$did(ingame1,6).sel).text 
+}
+
+on *:dialog:ingame1:sclick:8:{
+  set %TOSSRate1 $did(ingame1,8,$did(ingame1,8).sel).text 
+}
+
+on *:dialog:ingame1:sclick:9:{
+  set %TOSSExp1 $did(ingame1,9,$did(ingame1,9).sel).text
+}
+
+on *:dialog:ingame1:sclick:11:{
+  set %NABRate1 $did(ingame1,11,$did(ingame1,11).sel).text 
+}
+
+on *:dialog:ingame1:sclick:12:{
+  set %NABExp1 $did(ingame1,12,$did(ingame1,12).sel).text
+}
+
+on *:dialog:ingame1:sclick:14:{
+  set %HORate1 $did(ingame1,14,$did(ingame1,14).sel).text 
+}
+
+on *:dialog:ingame1:sclick:15:{
+  set %HOExp1 $did(ingame1,15,$did(ingame1,15).sel).text
+}
+
+on *:dialog:ingame1:sclick:17:{
+  set %SMSRate1 $did(ingame1,17,$did(ingame1,17).sel).text 
+}
+
+on *:dialog:ingame1:sclick:18:{
+  set %SMSExp1 $did(ingame1,18,$did(ingame1,18).sel).text
+}
+
+on *:dialog:ingame1:sclick:20:{
+  set %SHEPRate1 $did(ingame1,20,$did(ingame1,20).sel).text  
+}
+
+on *:dialog:ingame1:sclick:21:{
+  set %SHEPExp1 $did(ingame1,21,$did(ingame1,21).sel).text
+}
+
+on *:dialog:ingame1:sclick:23:{
+  set %NULLRate1 $did(ingame1,23,$did(ingame1,23).sel).text  
+}
+
+on *:dialog:ingame1:sclick:24:{
+  set %NULLExp1 $did(ingame1,24,$did(ingame1,24).sel).text
+}
+
+on *:dialog:ingame1:sclick:26:{
+  set %SWATRate1 $did(ingame1,26,$did(ingame1,26).sel).text  
+}
+
+on *:dialog:ingame1:sclick:27:{
+  set %SWATExp1 $did(ingame1,27,$did(ingame1,27).sel).text
+}
+
+on *:dialog:ingame1:sclick:29:{
+  set %PICRate1 $did(ingame1,29,$did(ingame1,29).sel).text  
+}
+
+on *:dialog:ingame1:sclick:30:{
+  set %PICExp1 $did(ingame1,30,$did(ingame1,30).sel).text
+}
+
+on *:dialog:ingame1:sclick:31:{
+
+  set %TeamNum1 $did(ingame1,1).text
+
+  if (%team. $+ $nick = $null) {
+    hadd Teams $did(ingame1,1).text Scouted
+    set %team. $+ $nick $hfind(Teams, %TeamNum1, 1, w)
+  } 
+
+  if (%TGRate1 != $null) {
+    set %TGStored1 %TGRate1 $+ ; $+ %TGExp1
+    set %TGOutput1 %TGRate1 $+ , $+ %TeamNum1
+    aline -l @TOPGUNS %TGOutput1
+    writeini team.ini @ $+ %TeamNum1 @ $+ TOPGUNS %TGStored1
+  }
+
+  if (%TOSSRate1 != $null) {
+    set %TOSSStored1 %TOSSRate1 $+ ; $+ %TOSSExp1
+    set %TOSSOutput1 %TOSSRate1 $+ , $+ %TeamNum1
+    aline -l @TOSSES %TOSSOutput1
+    writeini team.ini @ $+ %TeamNum1 @ $+ TOSSES %TOSSStored1
+  }
+
+  if (%NABRate1 != $null) {
+    set %NABStored1 %NABRate1 $+ ; $+ %NABExp1
+    set %NABOutput1 %NABRate1 $+ , $+ %TeamNum1
+    aline -l @NABS %NABOutput1
+    writeini team.ini @ $+ %TeamNum1 @ $+ NABS %NABStored1
+  }
+
+  if (%HORate1 != $null) {
+    set %HOStored1 %HORate1 $+ ; $+ %HOExp1
+    set %HOOutput1 %HORate1 $+ , $+ %TeamNum1
+    aline -l @HANDOFFS %HOOutput1
+    writeini team.ini @ $+ %TeamNum1 @ $+ HANDOFFS %HOStored1
+  }
+
+  if (%SMSRate1 != $null) {
+    set %SMSSTored1 %SMSRate1 $+ ; $+ %SMSExp1
+    set %SMSOutput1 %SMSRate1 $+ , $+ %TeamNum1
+    aline -l @SMALLSHOTS %SMSOutput1
+    writeini team.ini @ $+ %TeamNum1 @ $+ SMALSHOTS %SMSStored1
+  }
+
+  if (%SHEPRate1 != $null) {
+    set %SHEPStored1 %SHEPRate1 $+ ; $+ %SHEPExp1
+    set %SHEPOutput1 %SHEPRate1 $+ , $+ %TeamNum1
+    aline -l @SHEPHERDS %SHEPOutput1
+    writeini team.ini @ $+ %TeamNum1 @ $+ SHEPHERDS %SHEPStored1
+  }
+
+  if (%NULLRate1 != $null) {
+    set %NULLStored1 %NULLRate1 $+ ; $+ %NULLExp1
+    set %NULLOutput1 %NULLRate1 $+ , $+ %TeamNum1
+    aline -l @NULLS %NULLOutput1
+    writeini team.ini @ $+ %TeamNum1 @ $+ NULLS %NULLStored1
+  }
+
+  if (%SWATRate1 != $null) {
+    set %SWATStored1 %SWATRate1 $+ ; $+ %SWATExp1
+    set %SWATOutput1 %SWATRate1 $+ , $+ %TeamNum1
+    aline -l @SWATS %SWATOutput1
+    writeini team.ini @ $+ %TeamNum1 @ $+ SWATS %SWATStored1
+  }
+
+  if (%PICRate1 != $null) {
+    set %PICStored1 %PICRate1 $+ ; $+ %PICExp1
+    set %PICOutput1 %PICRate1 $+ , $+ %TeamNum1
+    aline -l @PICS %PICOutput1
+    writeini team.ini @ $+ %TeamNum1 @ $+ PICS %PICStored1
+  }
+
+  ; ZONE ONE COMPANION 
+
+  if (%HORate1 != $null) {
+    if (%NULLRate1 != $null) {
+      ; HANDOFF AND NULL
+      writeini ZoneOne.ini HANDOFF-NULLS %TeamNum1 HANDOFF $+ , $+ %HORate1 $+ : $+ %HOExp1 $+ ___ $+ NULL $+ , $+ %NULLRate1 $+ : $+ %NULLExp1       
+    }
+    else {
+      ; HANDOFF ONLY
+    }
+  }
+  else {
+    ; No Zone One
+  }
+
+  ; ZONE TWO COMPANION
+
+  if (%HORate1 != $null) {
+    if (%TOSSRate1 != $null) {
+      if (%PICRate1 != $null) {
+        if (%NULLRate1 != $null) {
+          ; HANDOFF TOSS PIC NULL
+          writeini ZoneTwo.ini HANDOFF-TOSS-PIC-NULL %TeamNum1 HANDOFF $+ , $+ %HORate1 $+ : $+ %HOExp1 $+ ___ $+ TOSS $+ , $+ %TOSSRate1 $+ : $+ %TOSSExp1 $+ ___ $+ PIC $+ , $+ %PICRate1 $+ : $+ %PICExp1 $+ ___ $+ NULL $+ , $+ %NULLRate1 $+ : $+ %NULLExp1                                                                              
+        }
+        else {
+          ; HANDOFF TOSS PIC
+          writeini ZoneTwo.ini HANDOFF-TOSS-PIC %TeamNum1 HANDOFF $+ , $+ %HORate1 $+ : $+ %HOExp1 $+ ___ $+ TOSS $+ , $+ %TOSSRate1 $+ : $+ %TOSSExp1 $+ ___ $+ PIC $+ , $+ %PICRate1 $+ : $+ %PICExp1                                        
+        }
+      }
+      else {
+        echo -a HANDOFF TOSS 
+        writeini ZoneTwo.ini HANDOFF-TOSS %TeamNum1 HANDOFF $+ , $+ %HORate1 $+ : $+ %HOExp1 $+ ___ $+ TOSS $+ , $+ %TOSSRate1 $+ : $+ %TOSSExp1
+      }
+    }
+    else {
+      ; HANDOFF NO TOSS
+      if (%PICRate1 != $null) {
+        if (%NULLRate1 != $null) {
+          ; HANDOFF PIC NULL
+          writeini ZoneTwo.ini HANDOFF-PIC-NULL %TeamNum1 HANDOFF $+ , $+ %HORate1 $+ : $+ %HOExp1 $+ ___ $+ PIC $+ , $+ %PICRate1 $+ : $+ %PICExp1 $+ ___ $+ NULL $+ , $+ %NULLRate1 $+ : $+ %NULLExp1 
+        }
+        else {
+          ; HANDOFF PIC
+          writeini ZoneTwo.ini HANDOFF-PIC %TeamNum1 HANDOFF $+ , $+ %HORate1 $+ : $+ %HOExp1 $+ ___ $+ PIC $+ , $+ %PICRate1 $+ : $+ %PICExp1
+        }
+      }
+      else {
+        ; HANDOFF NO TOSS NO PIC
+      }
+    }
+  }
+  else {
+    ; No Z2
+  }
+
+  ; ZONE THREE COMPANION
+
+  if (%TGRate1 != $null) {
+    if (%HORate1 != $null) {
+      if (%NABRate1 != $null) {
+        ; TOPGUN HANDOFF NAB
+        writeini ZoneThree.ini TOPGUN-HANDOFF-NAB %TeamNum1 TOPGUN $+ , $+ %TGRate1 $+ : $+ %TGExp1 $+ ___ $+ HANDOFF $+ , $+ %HORate1 $+ : $+ %HOExp1 $+ ___ $+ NAB $+ , $+ %NABRate1 $+ : $+ %NABExp1
+      }
+      else {
+        ; TOPGUN AND HANDOFF        
+        writeini ZoneThree.ini TOPGUN-HANDOFF %TeamNum1 TOPGUN $+ , $+ %TGRate1 $+ : $+ %TGExp1 $+ ___ $+ HANDOFF $+ , $+ %HORate1 $+ : $+ %HOExp1
+      }
+    }
+    else {
+      ; TOPGUN ONLY
+      if (%NABRate1 != $null) {
+        ; TOPGUN NULL
+
+      }
+      else {
+        ; TOPGUN ONLY
+      }
+    }
+  }
+  else {
+    ; nothing
+  }
+
+  ; AUTONOMOUS DATA STORAGE
+
+  if (%aMCZ1 != $null) {
+    set %AutonStored1 %aMCZ1 $+ , $+ %aTGS1 $+ , $+ %aLGS1
+    writeini team.ini @ $+ %TeamNum1 AUTON %AutonStored1
+  }
+  else {
+    if (%aTGS1 != $null) {
+      set %AutonStored1 %aMCZ1 $+ , $+ %aTGS1 $+ , $+ %aLGS1
+      writeini team.ini @ $+ %TeamNum1 AUTON %AutonStored1
+    }
+    else {
+      if (%aLGS1 != $null) {
+        set %AutonStored1 %aMCZ1 $+ , $+ %aTGS1 $+ , $+ %aLGS1
+        writeini team.ini @ $+ %TeamNum1 AUTON %AutonStored1
+      }
+      else {
+        writeini team.ini @ $+ %TeamNum1 AUTON NO/NON-SCORING AUTON
+      }
+    }
+  }
+
+  ; PERFORMANCE NOTES STORAGE
+
+  set %aSN1.1 $did(ingame1,35,0).text
+
+  if (%aSN1.1 != $null) {
+    ; notes
+    writeini team.ini @ $+ %TeamNum1 NOTES %aSN1.1
+  }
+  else {
+    ; no notes
+  }
+
+  set %aSN1.2 $did(ingame1,36,0).text
+
+  if (%aSN1.2 != $null) {
+    ; notes
+    writeini team.ini @ $+ %TeamNum1 NOTES2 %aSN1.2
+  }
+  else {
+    ; no notes
+  }
+
+  set %aSN1.3 $did(ingame1,37,0).text
+
+  if (%aSN1.3 != $null) {
+    ; notes
+    writeini team.ini @ $+ %TeamNum1 NOTES3 %aSN1.3
+  }
+  else {
+    ; no notes
+  }
+}
+
+on *:dialog:ingame1:sclick:32:{
+  set %aMCZ1 $did($dname, $did)
+}
+
+on *:dialog:ingame1:sclick:33:{
+  set %aTGS1 $did($dname, $did)
+}
+
+on *:dialog:ingame1:sclick:34:{
+  set %aLGS1 $did($dname, $did)
+}
+
+on *:dialog:ingame1:init:0:{
+  did -a ingame1 5 0
+  did -a ingame1 5 1
+  did -a ingame1 5 2 
+  did -a ingame1 5 3
+  did -a ingame1 5 4
+  did -a ingame1 5 5 
+  did -a ingame1 5 6
+  did -a ingame1 5 7 
+  did -a ingame1 5 8
+  did -a ingame1 5 9
+  did -a ingame1 5 10
+
+  did -a ingame1 8 0 
+  did -a ingame1 8 1
+  did -a ingame1 8 2 
+  did -a ingame1 8 3
+  did -a ingame1 8 4
+  did -a ingame1 8 5 
+  did -a ingame1 8 6
+  did -a ingame1 8 7 
+  did -a ingame1 8 8
+  did -a ingame1 8 9
+  did -a ingame1 8 10
+
+  did -a ingame1 11 0
+  did -a ingame1 11 1
+  did -a ingame1 11 2 
+  did -a ingame1 11 3
+  did -a ingame1 11 4
+  did -a ingame1 11 5 
+  did -a ingame1 11 6
+  did -a ingame1 11 7 
+  did -a ingame1 11 8
+  did -a ingame1 11 9
+  did -a ingame1 11 10 
+
+  did -a ingame1 14 0
+  did -a ingame1 14 1
+  did -a ingame1 14 2 
+  did -a ingame1 14 3
+  did -a ingame1 14 4
+  did -a ingame1 14 5 
+  did -a ingame1 14 6
+  did -a ingame1 14 7 
+  did -a ingame1 14 8
+  did -a ingame1 14 9
+  did -a ingame1 14 10
+
+  did -a ingame1 17 0 
+  did -a ingame1 17 1
+  did -a ingame1 17 2 
+  did -a ingame1 17 3
+  did -a ingame1 17 4
+  did -a ingame1 17 5 
+  did -a ingame1 17 6
+  did -a ingame1 17 7 
+  did -a ingame1 17 8
+  did -a ingame1 17 9
+  did -a ingame1 17 10
+
+  did -a ingame1 20 0 
+  did -a ingame1 20 1
+  did -a ingame1 20 2 
+  did -a ingame1 20 3
+  did -a ingame1 20 4
+  did -a ingame1 20 5 
+  did -a ingame1 20 6
+  did -a ingame1 20 7 
+  did -a ingame1 20 8
+  did -a ingame1 20 9
+  did -a ingame1 20 10
+
+  did -a ingame1 23 0 
+  did -a ingame1 23 1
+  did -a ingame1 23 2 
+  did -a ingame1 23 3
+  did -a ingame1 23 4
+  did -a ingame1 23 5 
+  did -a ingame1 23 6
+  did -a ingame1 23 7 
+  did -a ingame1 23 8
+  did -a ingame1 23 9
+  did -a ingame1 23 10 
+
+  did -a ingame1 26 0
+  did -a ingame1 26 1
+  did -a ingame1 26 2 
+  did -a ingame1 26 3
+  did -a ingame1 26 4
+  did -a ingame1 26 5 
+  did -a ingame1 26 6
+  did -a ingame1 26 7 
+  did -a ingame1 26 8
+  did -a ingame1 26 9
+  did -a ingame1 26 10
+
+  did -a ingame1 29 0
+  did -a ingame1 29 1
+  did -a ingame1 29 2 
+  did -a ingame1 29 3
+  did -a ingame1 29 4
+  did -a ingame1 29 5 
+  did -a ingame1 29 6
+  did -a ingame1 29 7 
+  did -a ingame1 29 8
+  did -a ingame1 29 9
+  did -a ingame1 29 10 
+
+  did -a ingame1 6 Fast (<5) Accurate
+  did -a ingame1 6 Fast (<5) Moderate
+  did -a ingame1 6 Fast (<5) Poor
+  did -a ingame1 6 Average (5-15) Accurate
+  did -a ingame1 6 Average (5-15) Moderate
+  did -a ingame1 6 Average (5-15) Poor
+  did -a ingame1 6 Slow (20+) Accurate
+  did -a ingame1 6 Slow (20+) Moderate
+  did -a ingame1 6 Slow (20+) Poor
+
+  did -a ingame1 9 Fast (<5) High Arc
+  did -a ingame1 9 Fast (<5) Low Arc
+  did -a ingame1 9 Average (5-15) High Arc
+  did -a ingame1 9 Average (5-15) Low Arc
+  did -a ingame1 9 Slow (20+) High Arc
+  did -a ingame1 9 Slow (20+) Low Arc
+
+  did -a ingame1 12 Fast (<5) Accurate
+  did -a ingame1 12 Fast (<5) 40-70% Drop Rate
+  did -a ingame1 12 Fast (<5) Poor
+  did -a ingame1 12 Average (5-15) Accurate 
+  did -a ingame1 12 Average (5-15) 40-70% Drop Rate
+  did -a ingame1 12 Average (5-15) Poor
+  did -a ingame1 12 Slow (20+) Accurate
+  did -a ingame1 12 Slow (20+) 40-70% Drop Rate
+  did -a ingame1 12 Slow (20+) Poor
+
+  did -a ingame1 15 Primary HandOff (Zone 1)
+  did -a ingame1 15 Primary HandOff (Zone 2)
+  did -a ingame1 15 Primary Handoff (Zone 3)
+  did -a ingame1 15 Primary Handoff (MultiZone)
+  did -a ingame1 15 Opportunistic HandOff (Zone 1)
+  did -a ingame1 15 Opportunistic HandOff (Zone 2)
+  did -a ingame1 15 Opportunistic HandOff (Zone 3)
+  did -a ingame1 15 Opportunistic HandOff (MutliZone)
+
+  did -a ingame1 18 Fast (<5) 
+  did -a ingame1 18 Fast (<5) Innacurate
+  did -a ingame1 18 Average (5-10) 
+  did -a ingame1 18 Average (5-10) Innacurate
+  did -a ingame1 18 Slow (10+) 
+  did -a ingame1 18 Slow (10+) Innacurate
+
+  did -a ingame1 21 Primary Shepherd (Zone 1)
+  did -a ingame1 21 Primary Shepherd (Zone 2)
+  did -a ingame1 21 Primary Shepherd (Zone 3)
+  did -a ingame1 21 Primary Shepherd (MultiZone)
+  did -a ingame1 21 Opportunistic Shepherd (Zone 1)
+  did -a ingame1 21 Opportunistic Shepherd (Zone 2)
+  did -a ingame1 21 Opportunistic Shepherd (Zone 3)
+  did -a ingame1 21 Opportunistic Shepherd (MultiZone)
+
+  did -a ingame1 24 Primary Null (Zone 1)
+  did -a ingame1 24 Primary Null (Zone 2)
+  did -a ingame1 24 Primary Null (Zone 3)
+  did -a ingame1 24 Primary Null (MultiZone)
+  did -a ingame1 24 Opportunistic Null (Zone 1)
+  did -a ingame1 24 Opportunistic Null (Zone 2)
+  did -a ingame1 24 Opportunistic Null (Zone 3)
+  did -a ingame1 24 Opportunistic Null (MutliZone)
+
+  did -a ingame1 27 Primary Swat 
+  did -a ingame1 27 Opportunistic Swat
+
+  did -a ingame1 30 Fast (<3)
+  did -a ingame1 30 Average (3-7)
+  did -a ingame1 30 Slow (7+)
+}
+
+; END ingame1
+
+alias ingame2 {
+  kill2
+  dialog -m ingame2 ingame2
+}
+dialog ingame2 {
+  title IN MATCH SCORING 
+  size 750 45 290 310
+  option dbu
+
+  edit "", 1, 15 10 50 10
+
+  text "Autonomous", 2, 110 75 75 10
+
+  text "Teleop", 3, 120 107 25 50
+
+  text "TopGun", 4, 10 125 50 25
+  combo 5, 32 123 20 10, drop
+  combo 6, 10 140 85 10, drop
+
+  text "Toss", 7, 100 125 50 25
+  combo 8, 120 123 20 10, drop
+  combo 9, 100 140 85 10, drop 
+
+  text "Nab", 10, 190 125 50 25
+  combo 11, 210 123 20 10, drop
+  combo 12, 190 140 85 10, drop
+
+  text "HandOff", 13, 10 200 50 25
+  combo 14, 35 198 20 10, drop
+  combo 15, 10 215 85 10, drop
+
+  text "SmallShot", 16, 97 200 50 25
+  combo 17, 125 198 20 10, drop
+  combo 18, 100 215 85 10, drop
+
+  text "Shepherd", 19, 187 200 50 25
+  combo 20, 215 198 20 10, drop
+  combo 21, 190 215 85 10, drop
+
+  text "Null", 22, 10 270 50 25
+  combo 23, 28 268 20 10, drop
+  combo 24, 10 285 85 10, drop
+
+  text "Swat", 25, 100 270 50 25
+  combo 26, 122 268 20 10, drop
+  combo 27, 100 285 85 10, drop
+
+  text "Pic", 28, 190 270 50 25
+  combo 29, 208 268 20 10, drop
+  combo 30, 190 285 85 10, drop
+
+  button "Submit", 31, 210 10 50 15, ok
+
+  check "Moves into Colored Zone", 32, 20 86 80 12
+  check "Top Goal Shooter", 33, 105 86 60 12 
+  check "Low Goal Shooter", 34, 190 86 60 12
+
+  edit "", 35, 15 34 250 10, multi
+  edit "", 36, 15 47 250 10, multi
+  edit "", 37, 15 60 250 10, multi
+  text "Preformance Notes", 38, 110 23 50 8
+
+  text "In-Game Scoring Sheet Two", 39, 100 12 70 10
+
+  text "1", 40, 10 34 3 10 
+  text "2", 41, 10 47 3 10 
+  text "3", 42, 10 60 3 10 
+}
+
+on *:dialog:ingame2:sclick:5:{
+  set %TGRate2 $did(ingame2,5,$did(ingame2,5).sel).text 
+}
+
+on *:dialog:ingame2:sclick:6:{
+  set %TGExp2 $did(ingame2,6,$did(ingame2,6).sel).text 
+}
+
+on *:dialog:ingame2:sclick:8:{
+  set %TOSSRate2 $did(ingame2,8,$did(ingame2,8).sel).text 
+}
+
+on *:dialog:ingame2:sclick:9:{
+  set %TOSSExp2 $did(ingame2,9,$did(ingame2,9).sel).text
+}
+
+on *:dialog:ingame2:sclick:11:{
+  set %NABRate2 $did(ingame2,11,$did(ingame2,11).sel).text 
+}
+
+on *:dialog:ingame2:sclick:12:{
+  set %NABExp2 $did(ingame2,12,$did(ingame2,12).sel).text
+}
+
+on *:dialog:ingame2:sclick:14:{
+  set %HORate2 $did(ingame2,14,$did(ingame2,14).sel).text 
+}
+
+on *:dialog:ingame2:sclick:15:{
+  set %HOExp2 $did(ingame2,15,$did(ingame2,15).sel).text
+}
+
+on *:dialog:ingame2:sclick:17:{
+  set %SMSRate2 $did(ingame2,17,$did(ingame2,17).sel).text 
+}
+
+on *:dialog:ingame2:sclick:18:{
+  set %SMSExp2 $did(ingame2,18,$did(ingame2,18).sel).text
+}
+
+on *:dialog:ingame2:sclick:20:{
+  set %SHEPRate2 $did(ingame2,20,$did(ingame2,20).sel).text  
+}
+
+on *:dialog:ingame2:sclick:21:{
+  set %SHEPExp2 $did(ingame2,21,$did(ingame2,21).sel).text
+}
+
+on *:dialog:ingame2:sclick:23:{
+  set %NULLRate2 $did(ingame2,23,$did(ingame2,23).sel).text  
+}
+
+on *:dialog:ingame2:sclick:24:{
+  set %NULLExp2 $did(ingame2,24,$did(ingame2,24).sel).text
+}
+
+on *:dialog:ingame2:sclick:26:{
+  set %SWATRate2 $did(ingame2,26,$did(ingame2,26).sel).text  
+}
+
+on *:dialog:ingame2:sclick:27:{
+  set %SWATExp2 $did(ingame2,27,$did(ingame2,27).sel).text
+}
+
+on *:dialog:ingame2:sclick:29:{
+  set %PICRate2 $did(ingame2,29,$did(ingame2,29).sel).text  
+}
+
+on *:dialog:ingame2:sclick:30:{
+  set %PICExp2 $did(ingame2,30,$did(ingame2,30).sel).text
+}
+
+on *:dialog:ingame2:sclick:31:{
+
+  set %TeamNum2 $did(ingame2,1).text
+
+  hadd Teams $did(ingame2,1).text Scouted
+
+  if (%TGRate2 != $null) {
+    set %TGStored2 %TGRate2 $+ ; $+ %TGExp2
+    set %TGOutput2 %TGRate2 $+ , $+ %TeamNum2
+    aline -l @TOPGUNS %TGOutput2
+    writeini team.ini @ $+ %TeamNum2 @ $+ TOPGUNS %TGStored2
+  }
+
+  if (%TOSSRate2 != $null) {
+    set %TOSSStored2 %TOSSRate2 $+ ; $+ %TOSSExp2
+    set %TOSSOutput2 %TOSSRate2 $+ , $+ %TeamNum2
+    aline -l @TOSSES %TOSSOutput2
+    writeini team.ini @ $+ %TeamNum2 @ $+ TOSSES %TOSSStored2
+  }
+
+  if (%NABRate2 != $null) {
+    set %NABStored2 %NABRate2 $+ ; $+ %NABExp2
+    set %NABOutput2 %NABRate2 $+ , $+ %TeamNum2
+    aline -l @NABS %NABOutput2
+    writeini team.ini @ $+ %TeamNum2 @ $+ NABS %NABStored2
+  }
+
+  if (%HORate2 != $null) {
+    set %HOStored2 %HORate2 $+ ; $+ %HOExp2
+    set %HOOutput2 %HORate2 $+ , $+ %TeamNum2
+    aline -l @HANDOFFS %HOOutput2
+    writeini team.ini @ $+ %TeamNum2 @ $+ HANDOFFS %HOStored2
+  }
+
+  if (%SMSRate2 != $null) {
+    set %SMSSTored2 %SMSRate2 $+ ; $+ %SMSExp2
+    set %SMSOutput2 %SMSRate2 $+ , $+ %TeamNum2
+    aline -l @SMALLSHOTS %SMSOutput2
+    writeini team.ini @ $+ %TeamNum2 @ $+ SMALSHOTS %SMSStored2
+  }
+
+  if (%SHEPRate2 != $null) {
+    set %SHEPStored2 %SHEPRate2 $+ ; $+ %SHEPExp2
+    set %SHEPOutput2 %SHEPRate2 $+ , $+ %TeamNum2
+    aline -l @SHEPHERDS %SHEPOutput2
+    writeini team.ini @ $+ %TeamNum2 @ $+ SHEPHERDS %SHEPStored2
+  }
+
+  if (%NULLRate2 != $null) {
+    set %NULLStored2 %NULLRate2 $+ ; $+ %NULLExp2
+    set %NULLOutput2 %NULLRate2 $+ , $+ %TeamNum2
+    aline -l @NULLS %NULLOutput2
+    writeini team.ini @ $+ %TeamNum2 @ $+ NULLS %NULLStored2
+  }
+
+  if (%SWATRate2 != $null) {
+    set %SWATStored2 %SWATRate2 $+ ; $+ %SWATExp2
+    set %SWATOutput2 %SWATRate2 $+ , $+ %TeamNum2
+    aline -l @SWATS %SWATOutput2
+    writeini team.ini @ $+ %TeamNum2 @ $+ SWATS %SWATStored2
+  }
+
+  if (%PICRate2 != $null) {
+    set %PICStored2 %PICRate2 $+ ; $+ %PICExp2
+    set %PICOutput2 %PICRate2 $+ , $+ %TeamNum2
+    aline -l @PICS %PICOutput2
+    writeini team.ini @ $+ %TeamNum2 @ $+ PICS %PICStored2
+  }
+
+  ; ZONE ONE COMPANION 
+
+  if (%HORate2 != $null) {
+    if (%NULLRate2 != $null) {
+      ; HANDOFF AND NULL
+      writeini ZoneOne.ini HANDOFF-NULLS %TeamNum2 HANDOFF $+ , $+ %HORate2 $+ : $+ %HOExp2 $+ ___ $+ NULL $+ , $+ %NULLRate2 $+ : $+ %NULLExp2       
+    }
+    else {
+      ; HANDOFF ONLY
+    }
+  }
+  else {
+    ; No Zone One
+  }
+
+  ; ZONE TWO COMPANION
+
+  if (%HORate2 != $null) {
+    if (%TOSSRate2 != $null) {
+      if (%PICRate2 != $null) {
+        if (%NULLRate2 != $null) {
+          ; HANDOFF TOSS PIC NULL
+          writeini ZoneTwo.ini HANDOFF-TOSS-PIC-NULL %TeamNum2 HANDOFF $+ , $+ %HORate2 $+ : $+ %HOExp2 $+ ___ $+ TOSS $+ , $+ %TOSSRate2 $+ : $+ %TOSSExp2 $+ ___ $+ PIC $+ , $+ %PICRate2 $+ : $+ %PICExp2 $+ ___ $+ NULL $+ , $+ %NULLRate2 $+ : $+ %NULLExp2                                                                              
+        }
+        else {
+          ; HANDOFF TOSS PIC
+          writeini ZoneTwo.ini HANDOFF-TOSS-PIC %TeamNum2 HANDOFF $+ , $+ %HORate2 $+ : $+ %HOExp2 $+ ___ $+ TOSS $+ , $+ %TOSSRate2 $+ : $+ %TOSSExp2 $+ ___ $+ PIC $+ , $+ %PICRate2 $+ : $+ %PICExp2                                        
+        }
+      }
+      else {
+        echo -a HANDOFF TOSS 
+        writeini ZoneTwo.ini HANDOFF-TOSS %TeamNum2 HANDOFF $+ , $+ %HORate2 $+ : $+ %HOExp2 $+ ___ $+ TOSS $+ , $+ %TOSSRate2 $+ : $+ %TOSSExp2
+      }
+    }
+    else {
+      ; HANDOFF NO TOSS
+      if (%PICRate2 != $null) {
+        if (%NULLRate2 != $null) {
+          ; HANDOFF PIC NULL
+          writeini ZoneTwo.ini HANDOFF-PIC-NULL %TeamNum2 HANDOFF $+ , $+ %HORate2 $+ : $+ %HOExp2 $+ ___ $+ PIC $+ , $+ %PICRate2 $+ : $+ %PICExp2 $+ ___ $+ NULL $+ , $+ %NULLRate2 $+ : $+ %NULLExp2 
+        }
+        else {
+          ; HANDOFF PIC
+          writeini ZoneTwo.ini HANDOFF-PIC %TeamNum2 HANDOFF $+ , $+ %HORate2 $+ : $+ %HOExp2 $+ ___ $+ PIC $+ , $+ %PICRate2 $+ : $+ %PICExp2
+        }
+      }
+      else {
+        ; HANDOFF NO TOSS NO PIC
+      }
+    }
+  }
+  else {
+    ; No Z2
+  }
+
+  ; ZONE THREE COMPANION
+
+  if (%TGRate2 != $null) {
+    if (%HORate2 != $null) {
+      if (%NABRate2 != $null) {
+        ; TOPGUN HANDOFF NAB
+        writeini ZoneThree.ini TOPGUN-HANDOFF-NAB %TeamNum2 TOPGUN $+ , $+ %TGRate2 $+ : $+ %TGExp2 $+ ___ $+ HANDOFF $+ , $+ %HORate2 $+ : $+ %HOExp2 $+ ___ $+ NAB $+ , $+ %NABRate2 $+ : $+ %NABExp2
+      }
+      else {
+        ; TOPGUN AND HANDOFF        
+        writeini ZoneThree.ini TOPGUN-HANDOFF %TeamNum2 TOPGUN $+ , $+ %TGRate2 $+ : $+ %TGExp2 $+ ___ $+ HANDOFF $+ , $+ %HORate2 $+ : $+ %HOExp2
+      }
+    }
+    else {
+      ; TOPGUN ONLY
+      if (%NABRate2 != $null) { 
+        ; TOPGUN NULL
+      }
+      else {
+        ; TOPGUN ONLY
+      }
+    }
+  }
+  else {
+    ; nothing
+  }
+
+  ; AUTONOMOUS DATA STORAGE
+
+  if (%aMCZ2 != $null) {
+    set %AutonStored2 %aMCZ2 $+ , $+ %aTGS2 $+ , $+ %aLGS2
+    writeini team.ini @ $+ %TeamNum2 AUTON %AutonStored2
+  }
+  else {
+    if (%aTGS2 != $null) {
+      set %AutonStored2 %aMCZ2 $+ , $+ %aTGS2 $+ , $+ %aLGS2
+      writeini team.ini @ $+ %TeamNum2 AUTON %AutonStored2
+    }
+    else {
+      if (%aLGS2 != $null) {
+        set %AutonStored2 %aMCZ2 $+ , $+ %aTGS2 $+ , $+ %aLGS2
+        writeini team.ini @ $+ %TeamNum2 AUTON %AutonStored2
+      }
+      else {
+        writeini team.ini @ $+ %TeamNum2 AUTON NO/NON-SCORING AUTON
+      }
+    }
+  }
+  ; PERFORMANCE NOTES STORAGE
+
+  set %aSN2.1 $did(ingame2,35,0).text
+
+  if (%aSN2.1 != $null) {
+    ; notes
+    writeini team.ini @ $+ %TeamNum2 NOTES %aSN2.1
+  }
+  else {
+    ; no notes
+  }
+
+  set %aSN2.2 $did(ingame2,36,0).text
+
+  if (%aSN2.2 != $null) {
+    ; notes
+    writeini team.ini @ $+ %TeamNum2 NOTES2 %aSN2.2
+  }
+  else {
+    ; no notes
+  }
+
+  set %aSN2.3 $did(ingame2,37,0).text
+
+  if (%aSN2.3 != $null) {
+    ; notes
+    writeini team.ini @ $+ %TeamNum2 NOTES3 %aSN2.3
+  }
+  else {
+    ; no notes
+  }
+}
+
+on *:dialog:ingame2:sclick:32:{
+  set %aMCZ2 $did($dname, $did)
+}
+
+on *:dialog:ingame2:sclick:33:{
+  set %aTGS2 $did($dname, $did)
+}
+
+on *:dialog:ingame2:sclick:34:{
+  set %aLGS2 $did($dname, $did)
+}
+
+on *:dialog:ingame2:init:0:{
+  did -a ingame2 5 0
+  did -a ingame2 5 1
+  did -a ingame2 5 2 
+  did -a ingame2 5 3
+  did -a ingame2 5 4
+  did -a ingame2 5 5 
+  did -a ingame2 5 6
+  did -a ingame2 5 7 
+  did -a ingame2 5 8
+  did -a ingame2 5 9
+  did -a ingame2 5 10
+
+  did -a ingame2 8 0 
+  did -a ingame2 8 1
+  did -a ingame2 8 2 
+  did -a ingame2 8 3
+  did -a ingame2 8 4
+  did -a ingame2 8 5 
+  did -a ingame2 8 6
+  did -a ingame2 8 7 
+  did -a ingame2 8 8
+  did -a ingame2 8 9
+  did -a ingame2 8 10
+
+  did -a ingame2 11 0
+  did -a ingame2 11 1
+  did -a ingame2 11 2 
+  did -a ingame2 11 3
+  did -a ingame2 11 4
+  did -a ingame2 11 5 
+  did -a ingame2 11 6
+  did -a ingame2 11 7 
+  did -a ingame2 11 8
+  did -a ingame2 11 9
+  did -a ingame2 11 10 
+
+  did -a ingame2 14 0
+  did -a ingame2 14 1
+  did -a ingame2 14 2 
+  did -a ingame2 14 3
+  did -a ingame2 14 4
+  did -a ingame2 14 5 
+  did -a ingame2 14 6
+  did -a ingame2 14 7 
+  did -a ingame2 14 8
+  did -a ingame2 14 9
+  did -a ingame2 14 10
+
+  did -a ingame2 17 0 
+  did -a ingame2 17 1
+  did -a ingame2 17 2 
+  did -a ingame2 17 3
+  did -a ingame2 17 4
+  did -a ingame2 17 5 
+  did -a ingame2 17 6
+  did -a ingame2 17 7 
+  did -a ingame2 17 8
+  did -a ingame2 17 9
+  did -a ingame2 17 10
+
+  did -a ingame2 20 0 
+  did -a ingame2 20 1
+  did -a ingame2 20 2 
+  did -a ingame2 20 3
+  did -a ingame2 20 4
+  did -a ingame2 20 5 
+  did -a ingame2 20 6
+  did -a ingame2 20 7 
+  did -a ingame2 20 8
+  did -a ingame2 20 9
+  did -a ingame2 20 10
+
+  did -a ingame2 23 0 
+  did -a ingame2 23 1
+  did -a ingame2 23 2 
+  did -a ingame2 23 3
+  did -a ingame2 23 4
+  did -a ingame2 23 5 
+  did -a ingame2 23 6
+  did -a ingame2 23 7 
+  did -a ingame2 23 8
+  did -a ingame2 23 9
+  did -a ingame2 23 10 
+
+  did -a ingame2 26 0
+  did -a ingame2 26 1
+  did -a ingame2 26 2 
+  did -a ingame2 26 3
+  did -a ingame2 26 4
+  did -a ingame2 26 5 
+  did -a ingame2 26 6
+  did -a ingame2 26 7 
+  did -a ingame2 26 8
+  did -a ingame2 26 9
+  did -a ingame2 26 10
+
+  did -a ingame2 29 0
+  did -a ingame2 29 1
+  did -a ingame2 29 2 
+  did -a ingame2 29 3
+  did -a ingame2 29 4
+  did -a ingame2 29 5 
+  did -a ingame2 29 6
+  did -a ingame2 29 7 
+  did -a ingame2 29 8
+  did -a ingame2 29 9
+  did -a ingame2 29 10 
+
+  did -a ingame2 6 Fast (<5) Accurate
+  did -a ingame2 6 Fast (<5) Moderate
+  did -a ingame2 6 Fast (<5) Poor
+  did -a ingame2 6 Average (5-15) Accurate
+  did -a ingame2 6 Average (5-15) Moderate
+  did -a ingame2 6 Average (5-15) Poor
+  did -a ingame2 6 Slow (20+) Accurate
+  did -a ingame2 6 Slow (20+) Moderate
+  did -a ingame2 6 Slow (20+) Poor
+
+  did -a ingame2 9 Fast (<5) High Arc
+  did -a ingame2 9 Fast (<5) Low Arc
+  did -a ingame2 9 Average (5-15) High Arc
+  did -a ingame2 9 Average (5-15) Low Arc
+  did -a ingame2 9 Slow (20+) High Arc
+  did -a ingame2 9 Slow (20+) Low Arc
+
+  did -a ingame2 12 Fast (<5) Accurate
+  did -a ingame2 12 Fast (<5) 40-70% Drop Rate
+  did -a ingame2 12 Fast (<5) Poor
+  did -a ingame2 12 Average (5-15) Accurate 
+  did -a ingame2 12 Average (5-15) 40-70% Drop Rate
+  did -a ingame2 12 Average (5-15) Poor
+  did -a ingame2 12 Slow (20+) Accurate
+  did -a ingame2 12 Slow (20+) 40-70% Drop Rate
+  did -a ingame2 12 Slow (20+) Poor
+
+  did -a ingame2 15 Primary HandOff (Zone 1)
+  did -a ingame2 15 Primary HandOff (Zone 2)
+  did -a ingame2 15 Primary Handoff (Zone 3)
+  did -a ingame2 15 Primary Handoff (MultiZone)
+  did -a ingame2 15 Opportunistic HandOff (Zone 1)
+  did -a ingame2 15 Opportunistic HandOff (Zone 2)
+  did -a ingame2 15 Opportunistic HandOff (Zone 3)
+  did -a ingame2 15 Opportunistic HandOff (MutliZone)
+
+  did -a ingame2 18 Fast (<5) 
+  did -a ingame2 18 Fast (<5) Innacurate
+  did -a ingame2 18 Average (5-10) 
+  did -a ingame2 18 Average (5-10) Innacurate
+  did -a ingame2 18 Slow (10+) 
+  did -a ingame2 18 Slow (10+) Innacurate
+
+  did -a ingame2 21 Primary Shepherd (Zone 1)
+  did -a ingame2 21 Primary Shepherd (Zone 2)
+  did -a ingame2 21 Primary Shepherd (Zone 3)
+  did -a ingame2 21 Primary Shepherd (MultiZone)
+  did -a ingame2 21 Opportunistic Shepherd (Zone 1)
+  did -a ingame2 21 Opportunistic Shepherd (Zone 2)
+  did -a ingame2 21 Opportunistic Shepherd (Zone 3)
+  did -a ingame2 21 Opportunistic Shepherd (MultiZone)
+
+  did -a ingame2 24 Primary Null (Zone 1)
+  did -a ingame2 24 Primary Null (Zone 2)
+  did -a ingame2 24 Primary Null (Zone 3)
+  did -a ingame2 24 Primary Null (MultiZone)
+  did -a ingame2 24 Opportunistic Null (Zone 1)
+  did -a ingame2 24 Opportunistic Null (Zone 2)
+  did -a ingame2 24 Opportunistic Null (Zone 3)
+  did -a ingame2 24 Opportunistic Null (MutliZone)
+
+  did -a ingame2 27 Primary Swat 
+  did -a ingame2 27 Opportunistic Swat
+
+  did -a ingame2 30 Fast (<3)
+  did -a ingame2 30 Average (3-7)
+  did -a ingame2 30 Slow (7+)
+}
+; END ingame2
